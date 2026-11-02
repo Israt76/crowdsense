@@ -100,11 +100,11 @@ These evaluation scenarios are simulated and reproducible; they are not outcomes
 
 The original repository test file remains unchanged. `npm test` discovers every test file, including that suite, the reviewed tests, and six context regressions: **101/101 automated tests passing**. Run `npm run eval` to regenerate the full 20-seed report; `npm run eval:quick` uses five seeds. On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
 
-## Final Codex audit
+## How I used OpenAI Codex
 
-OpenAI Codex was used for the final submission audit. In the verified local audit, Codex inspected the project, ran the automated tests and evaluation, checked the Twitch path and credential handling, and fixed submission-critical issues involving debug logging, reconnect shutdown, capability checks, Windows evaluation behavior, worker-seed consistency, and HTTP request handling.
+I used **OpenAI Codex** as the final engineering partner for CrowdSense. In the main Codex session, it inspected the full codebase, ran the automated test suite and evaluation, reviewed the Twitch integration and credential handling, identified submission-critical issues, and helped fix them. This included problems involving debug logging, reconnect shutdown, capability checks, Windows evaluation behavior, worker-seed consistency, and HTTP request handling. Codex then re-ran the tests and evaluation to verify the fixes and pushed the final build.
 
-The final audit reproduced the **99.2% simulated decision accuracy** and completed with **101/101 automated tests passing**. The local Twitch check confirmed messages reached the engine. Credentials must remain in local environment configuration and must never be committed or included in submission archives. No `.env` file is included in this clone.
+Codex helped me systematically **test, debug, strengthen, verify, and finalize CrowdSense** for submission. The verified build reproduced the **99.2% simulated decision accuracy** and completed with **101/101 automated tests passing**. The local Twitch check confirmed messages reached the engine. Credentials remain in local environment configuration and are not committed or included in submission archives. No `.env` file is included in this repository.
 
 ## Important design choices
 

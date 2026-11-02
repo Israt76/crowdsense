@@ -4,6 +4,8 @@ CrowdSense turns messy, naturally written Twitch chat into one collective **Crow
 
 **People, not messages. One viewer, one voice. A crowd is relative to the room.**
 
+**Demo video:** https://youtu.be/vxVhOq4yMUk
+
 ## What it does
 
 CrowdSense groups natural wording, detects stance and negation, deduplicates by viewer, applies room-relative thresholds and temporal stability, and surfaces only meaningful crowd moments:
@@ -98,7 +100,7 @@ Additional results:
 
 These evaluation scenarios are simulated and reproducible; they are not outcomes from a large real Twitch crowd. Real Twitch testing to date is a functional check with a handful of real accounts.
 
-The original repository test file remains unchanged. `npm test` discovers every test file, including that suite, the reviewed tests, and six context regressions: **101/101 automated tests passing**. Run `npm run eval` to regenerate the full 20-seed report; `npm run eval:quick` uses five seeds. On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
+`npm test` runs every test file: **101/101 automated tests passing**. Run `npm run eval` to regenerate the full 20-seed report; `npm run eval:quick` uses five seeds. On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
 
 ## How I used OpenAI Codex
 

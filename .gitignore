@@ -1,5 +1,7 @@
 node_modules/
 .env
+.env.*
+!.env.example
 data/logs/*.jsonl
 !data/logs/example-simulated-flood.jsonl
 .DS_Store

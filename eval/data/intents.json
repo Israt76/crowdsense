@@ -1,0 +1,325 @@
+{
+ "description": "Hand-labelled meaning-group test set. None of these strings appear in the prototype library (checked by a test). Labels: rematch, confused, hype, none. Written by the project author, not collected from real streams. Items that normalize to an exact prototype string were rewritten so the set tests generalization, not lookup.",
+ "items": [
+  [
+   "run that back",
+   "rematch"
+  ],
+  [
+   "REMATCH NOW",
+   "rematch"
+  ],
+  [
+   "again again",
+   "rematch"
+  ],
+  [
+   "one more game",
+   "rematch"
+  ],
+  [
+   "do it again bro!!",
+   "rematch"
+  ],
+  [
+   "rematchhhh pls",
+   "rematch"
+  ],
+  [
+   "go again pls",
+   "rematch"
+  ],
+  [
+   "another round",
+   "rematch"
+  ],
+  [
+   "run it back now",
+   "rematch"
+  ],
+  [
+   "one more pls",
+   "rematch"
+  ],
+  [
+   "once more pls",
+   "rematch"
+  ],
+  [
+   "replay that",
+   "rematch"
+  ],
+  [
+   "we need a rematch",
+   "rematch"
+  ],
+  [
+   "AGAIN!! one more",
+   "rematch"
+  ],
+  [
+   "run it baaack chat",
+   "rematch"
+  ],
+  [
+   "play it one more time",
+   "rematch"
+  ],
+  [
+   "new round please",
+   "rematch"
+  ],
+  [
+   "queue again",
+   "rematch"
+  ],
+  [
+   "rematch rematch",
+   "rematch"
+  ],
+  [
+   "give us one more",
+   "rematch"
+  ],
+  [
+   "wait how do we enter the giveaway?",
+   "confused"
+  ],
+  [
+   "how do i get in the giveaway",
+   "confused"
+  ],
+  [
+   "giveaway rules?",
+   "confused"
+  ],
+  [
+   "where's the giveaway link",
+   "confused"
+  ],
+  [
+   "im so lost what giveaway",
+   "confused"
+  ],
+  [
+   "how to join giveaway?",
+   "confused"
+  ],
+  [
+   "what do i type for the giveaway",
+   "confused"
+  ],
+  [
+   "confused about the giveaway",
+   "confused"
+  ],
+  [
+   "do i need to follow for the giveaway?",
+   "confused"
+  ],
+  [
+   "what are the giveaway rules??",
+   "confused"
+  ],
+  [
+   "wait what giveaway",
+   "confused"
+  ],
+  [
+   "how does the giveaway work",
+   "confused"
+  ],
+  [
+   "huh?? what happened",
+   "confused"
+  ],
+  [
+   "wait what just happened",
+   "confused"
+  ],
+  [
+   "i dont get the rules",
+   "confused"
+  ],
+  [
+   "how do you play this mode?",
+   "confused"
+  ],
+  [
+   "what is going on lol",
+   "confused"
+  ],
+  [
+   "can someone explain the rules",
+   "confused"
+  ],
+  [
+   "where do i enter",
+   "confused"
+  ],
+  [
+   "lost af",
+   "confused"
+  ],
+  [
+   "NO WAY BRO",
+   "hype"
+  ],
+  [
+   "W streamer",
+   "hype"
+  ],
+  [
+   "INSANE play",
+   "hype"
+  ],
+  [
+   "CLIP IT NOW",
+   "hype"
+  ],
+  [
+   "LETS GOOO BABY",
+   "hype"
+  ],
+  [
+   "POGGERS",
+   "hype"
+  ],
+  [
+   "W W W",
+   "hype"
+  ],
+  [
+   "HOLY MOLY",
+   "hype"
+  ],
+  [
+   "🔥🔥🔥",
+   "hype"
+  ],
+  [
+   "KEKW KEKW",
+   "hype"
+  ],
+  [
+   "OMG OMG",
+   "hype"
+  ],
+  [
+   "what a play man",
+   "hype"
+  ],
+  [
+   "sheeeesh",
+   "hype"
+  ],
+  [
+   "insane clutch",
+   "hype"
+  ],
+  [
+   "someone clip that",
+   "hype"
+  ],
+  [
+   "massive W chat",
+   "hype"
+  ],
+  [
+   "😱😱😱",
+   "hype"
+  ],
+  [
+   "no wayyyy dude",
+   "hype"
+  ],
+  [
+   "that was insane",
+   "hype"
+  ],
+  [
+   "absolute cinema",
+   "hype"
+  ],
+  [
+   "hi chat how is everyone",
+   "none"
+  ],
+  [
+   "this music slaps",
+   "none"
+  ],
+  [
+   "gg",
+   "none"
+  ],
+  [
+   "what time is it there",
+   "none"
+  ],
+  [
+   "first time watching",
+   "none"
+  ],
+  [
+   "really love this stream",
+   "none"
+  ],
+  [
+   "brb food",
+   "none"
+  ],
+  [
+   "hello from brazil",
+   "none"
+  ],
+  [
+   "i need sleep",
+   "none"
+  ],
+  [
+   "my dog says hi",
+   "none"
+  ],
+  [
+   "back from work",
+   "none"
+  ],
+  [
+   "hydrate",
+   "none"
+  ],
+  [
+   "go left",
+   "none"
+  ],
+  [
+   "right is a trap",
+   "none"
+  ],
+  [
+   "cozy stream",
+   "none"
+  ],
+  [
+   "whats the song name?",
+   "none"
+  ],
+  [
+   "how long is the stream today?",
+   "none"
+  ],
+  [
+   "nice outfit",
+   "none"
+  ],
+  [
+   "that boss is hard",
+   "none"
+  ],
+  [
+   "good night chat",
+   "none"
+  ]
+ ]
+}

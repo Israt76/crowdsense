@@ -113,34 +113,36 @@ export class CrowdSense {
     const nextText = hint || '';
     const nextHint = parseHint(hint);
 
-    // If a new hint names an option chat is already using, preserve those
-    // recent messages and re-parse them. A genuinely different choice starts fresh.
-    const hintTerms = new Set();
-    for (const o of nextHint?.options || []) {
-      for (const w of String(o.name).split(/\s+/)) if (w) hintTerms.add(w);
-      for (const a of o.aliases || []) for (const w of String(a).split(/\s+/)) if (w) hintTerms.add(w);
-    }
-    let overlapsRecentDecisionTalk = false;
-    if (hintTerms.size) {
-      outer: for (const v of this.voters.values()) {
-        for (const r of v.recent) {
-          const words = r.norm?.words || [];
-          if (words.some((w) => hintTerms.has(w))) { overlapsRecentDecisionTalk = true; break outer; }
+    // Retain only stances compatible with the same choice. Shared words such
+    // as "door" or "first" alone must not carry votes into a different choice.
+    const options = nextHint?.options.map((o) => o.name) || [];
+    const previousOptions = this.hint?.options.map((o) => o.name) || [];
+    const sameOptions = options.length === previousOptions.length &&
+      options.every((o) => previousOptions.includes(o));
+    const sameTopic = !this.hint?.topic || !nextHint?.topic ||
+      normalize(this.hint.topic).text === normalize(nextHint.topic).text;
+    const compatible = !!nextHint && (!this.hint || (sameOptions && sameTopic));
+    const ctx = { options, hint: nextHint, fuzzy: this.cfg.semantic, stance: this.cfg.stance };
+    for (const v of this.voters.values()) {
+      const pool = v.sticky && !v.recent.includes(v.sticky) ? [v.sticky, ...v.recent] : v.recent;
+      v.recent = compatible ? pool.filter((r) => {
+        if (this.cfg.temporal && ts - r.t > this.cfg.windowMs) return false;
+        const next = analyzeStance(r.norm, ctx);
+        if (!next.counted) return false;
+        if (this.hint) {
+          const previous = analyzeStance(r.norm, { ...ctx, options: previousOptions, hint: this.hint });
+          // Reordered ordinal aliases must not silently move a viewer's vote.
+          if (previous.preference !== next.preference ||
+              [...previous.opposed].sort().join('|') !== [...next.opposed].sort().join('|')) return false;
         }
-      }
+        r.parsed = null;
+        r.parsedKey = null;
+        return true;
+      }) : [];
+      v.sticky = null;
     }
-
     this.hintText = nextText;
     this.hint = nextHint;
-    if (!overlapsRecentDecisionTalk) {
-      for (const v of this.voters.values()) { v.recent = []; v.sticky = null; }
-    } else {
-      for (const v of this.voters.values()) {
-        if (v.sticky && !v.recent.includes(v.sticky)) v.recent.unshift(v.sticky);
-        v.sticky = null;
-        for (const r of v.recent) { r.parsed = null; r.parsedKey = null; }
-      }
-    }
     this.optionMemory.clear();
     for (const k of [...this.cond.keys()]) if (!k.startsWith('sig:')) this.cond.delete(k);
     this.decide = { state: 'NOISE', option: null, since: ts, acknowledged: null };

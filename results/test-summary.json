@@ -1,6 +1,7 @@
 {
-  "tests": 48,
-  "pass": 48,
+  "tests": 101,
+  "pass": 101,
   "fail": 0,
-  "node": "v22.16.0"
+  "files": 7,
+  "node": "v26.13.0"
 }

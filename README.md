@@ -30,7 +30,7 @@ npm run demo
 npm test
 ```
 
-Current verified test result: **47/47 passing**.
+Current verified test result: **101/101 automated tests passing**.
 
 ## Live Twitch setup
 
@@ -94,15 +94,17 @@ Additional results:
 - Stance accuracy: **93.3%**
 - Meaning grouping accuracy: **86.3%**
 - Median measured confusion drop when resolved: **75%**
-- Automated tests: **47/47 passing**
+- Automated tests: **101/101 automated tests passing**
 
 These evaluation scenarios are simulated and reproducible; they are not outcomes from a large real Twitch crowd. Real Twitch testing to date is a functional check with a handful of real accounts.
+
+The original repository test file remains unchanged. `npm test` discovers every test file, including that suite, the reviewed tests, and six context regressions: **101/101 automated tests passing**. Run `npm run eval` to regenerate the full 20-seed report; `npm run eval:quick` uses five seeds. On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
 
 ## Final Codex audit
 
 OpenAI Codex was used for the final submission audit. In the verified local audit, Codex inspected the project, ran the automated tests and evaluation, checked the Twitch path and credential handling, and fixed submission-critical issues involving debug logging, reconnect shutdown, capability checks, Windows evaluation behavior, worker-seed consistency, and HTTP request handling.
 
-The final audit reproduced the **99.2% simulated decision accuracy** and completed with **47/47 automated tests passing**. The local Twitch check confirmed messages reached the engine. Credentials remain in the local `.env`, which must never be committed or included in submission archives.
+The final audit reproduced the **99.2% simulated decision accuracy** and completed with **101/101 automated tests passing**. The local Twitch check confirmed messages reached the engine. Credentials must remain in local environment configuration and must never be committed or included in submission archives. No `.env` file is included in this clone.
 
 ## Important design choices
 
@@ -129,7 +131,7 @@ The final audit reproduced the **99.2% simulated decision accuracy** and complet
 ## Privacy and limits
 
 - OAuth credentials stay in local environment variables.
-- Browser state is aggregate-only; stable Twitch user IDs are used server-side for deduplication.
+- The live control view retains Twitch display names for functional verification; overlay state and explanations are aggregate-only. Stable numeric Twitch IDs remain server-side for deduplication.
 - English-only rule-based stance can miss sarcasm and unusual phrasing.
 - The included semantic representation is local and deterministic, not a neural sentence encoder.
 - Manipulation resistance is partial; sophisticated coordinated behavior can still evade heuristics.

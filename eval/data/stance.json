@@ -1,0 +1,23 @@
+{
+  "description": "Hand-labelled stance test set for a LEFT/RIGHT decision. Labels: LEFT, RIGHT (support), AGAINST_LEFT, AGAINST_RIGHT (only opposition stated), NONE (question, meta, neutral, unrelated). Written by the project author; includes deliberately hard cases (sarcasm, idioms) that the rule-based parser is expected to miss.",
+  "options": ["left", "right"],
+  "hint": "fork: left door / right door",
+  "items": [
+    ["go left", "LEFT"], ["LEFT!!", "LEFT"], ["left", "LEFT"], ["take the left route", "LEFT"], ["left looks safer", "LEFT"],
+    ["leeeeft", "LEFT"], ["def left", "LEFT"], ["left 100%", "LEFT"], ["honestly left", "LEFT"], ["the left one", "LEFT"],
+    ["go right", "RIGHT"], ["RIGHT", "RIGHT"], ["right right right", "RIGHT"], ["nah right is better", "RIGHT"], ["everyone go right!!", "RIGHT"],
+    ["dont go left", "AGAINST_LEFT"], ["don't go right", "AGAINST_RIGHT"], ["right is a trap", "AGAINST_RIGHT"], ["anything but right", "AGAINST_RIGHT"],
+    ["avoid right", "AGAINST_RIGHT"], ["right sucks", "AGAINST_RIGHT"], ["left is not safe", "AGAINST_LEFT"], ["not going left lol", "AGAINST_LEFT"],
+    ["chat not left!!", "AGAINST_LEFT"], ["if we go right we die", "AGAINST_RIGHT"], ["left is the wrong call", "AGAINST_LEFT"],
+    ["never right", "AGAINST_RIGHT"], ["skip left", "AGAINST_LEFT"], ["LEFT IS A TRAP DONT LISTEN", "AGAINST_LEFT"],
+    ["left not right", "LEFT"], ["left > right", "LEFT"], ["left is better than right", "LEFT"], ["not right, left", "LEFT"],
+    ["right over left", "RIGHT"], ["right isnt a trap", "RIGHT"], ["left obviously, right is a trap", "LEFT"],
+    ["dont listen to them, go left", "LEFT"], ["i was saying left but right is better", "RIGHT"], ["actually right", "RIGHT"],
+    ["nothing but left", "LEFT"], ["i say right", "RIGHT"], ["id rather die than go left", "AGAINST_LEFT"],
+    ["why is everyone saying left?", "NONE"], ["left or right?", "NONE"], ["is left better?", "NONE"], ["should we go right?", "NONE"],
+    ["everyone is spamming right lol", "NONE"], ["left or right chat", "NONE"], ["whats on the left?", "NONE"], ["lol", "NONE"],
+    ["hi chat", "NONE"], ["rematch", "NONE"], ["take the first door", "LEFT"], ["second door", "RIGHT"], ["not the first door", "AGAINST_LEFT"],
+    ["imagine going right lmao", "AGAINST_RIGHT"], ["why not left", "LEFT"], ["left would be a disaster", "AGAINST_LEFT"],
+    ["right? no, left", "LEFT"], ["you guys are right, left it is", "LEFT"]
+  ]
+}

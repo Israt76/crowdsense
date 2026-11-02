@@ -2,10 +2,8 @@
 // is computed live by the real CrowdSense engine.
 import * as P from './phrases.js';
 
-function rng(seed=1){
-  let x=seed>>>0;
-  return ()=>{x=(Math.imul(1664525,x)+1013904223)>>>0;return x/4294967296;};
-}
+// Share the evaluator's deterministic generator so demo seeds are reproducible.
+import { rng } from './scenarios.js';
 
 export function buildDemo(seed=7){
   const r=rng(seed);

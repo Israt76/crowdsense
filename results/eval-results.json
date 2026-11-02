@@ -1,43 +1,1182 @@
 {
-  "evaluation_type": "simulated benchmark",
-  "seeds": 20,
-  "scenarios": 11,
+  "generatedBy": "eval/run-eval.js",
+  "node": "v26.13.0",
+  "seedsPerScenario": 20,
+  "seeds": [
+    1000,
+    1019
+  ],
+  "scenarios": [
+    "organic_majority",
+    "flood_attack",
+    "negation_heavy",
+    "divided",
+    "transient_burst",
+    "small_room",
+    "big_room_minority",
+    "mind_change",
+    "meta_questions",
+    "bot_swarm",
+    "stale_signal"
+  ],
+  "stance": {
+    "n": 60,
+    "exactAccuracy": 0.9333333333333333,
+    "keywordExactAccuracy": 0.5166666666666667,
+    "directionAccuracy": 0.9333333333333333,
+    "keywordDirectionAccuracy": 0.5166666666666667,
+    "failures": [
+      {
+        "text": "imagine going right lmao",
+        "gold": "AGAINST_RIGHT",
+        "pred": "RIGHT",
+        "keyword": "RIGHT",
+        "correct": false
+      },
+      {
+        "text": "why not left",
+        "gold": "LEFT",
+        "pred": "NONE",
+        "keyword": "LEFT",
+        "correct": false
+      },
+      {
+        "text": "left would be a disaster",
+        "gold": "AGAINST_LEFT",
+        "pred": "LEFT",
+        "keyword": "LEFT",
+        "correct": false
+      },
+      {
+        "text": "you guys are right, left it is",
+        "gold": "LEFT",
+        "pred": "NONE",
+        "keyword": "LEFT",
+        "correct": false
+      }
+    ]
+  },
+  "intents": {
+    "semantic": {
+      "n": 80,
+      "accuracy": 0.8625,
+      "macroF1": 0.8998735577682947,
+      "f1": {
+        "rematch": 0.9189189189189189,
+        "confused": 0.8333333333333334,
+        "hype": 0.9473684210526316,
+        "none": 0.7755102040816326
+      },
+      "failures": [
+        {
+          "text": "another round",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "we need a rematch",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "new round please",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "giveaway rules?",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "what do i type for the giveaway",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "confused about the giveaway",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "do i need to follow for the giveaway?",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "lost af",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "sheeeesh",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "absolute cinema",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "whats the song name?",
+          "gold": "none",
+          "pred": "confused"
+        }
+      ]
+    },
+    "keyword": {
+      "n": 80,
+      "accuracy": 0.65,
+      "macroF1": 0.6917450365726228,
+      "f1": {
+        "rematch": 0.6206896551724138,
+        "confused": 0.6666666666666666,
+        "hype": 0.787878787878788,
+        "none": 0.5882352941176471
+      },
+      "failures": [
+        {
+          "text": "run that back",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "one more game",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "another round",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "run it back now",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "one more pls",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "once more pls",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "replay that",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "run it baaack chat",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "play it one more time",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "new round please",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "give us one more",
+          "gold": "rematch",
+          "pred": "none"
+        },
+        {
+          "text": "how do i get in the giveaway",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "where's the giveaway link",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "what do i type for the giveaway",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "do i need to follow for the giveaway?",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "wait what giveaway",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "how does the giveaway work",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "huh?? what happened",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "wait what just happened",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "how do you play this mode?",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "what is going on lol",
+          "gold": "confused",
+          "pred": "none"
+        },
+        {
+          "text": "NO WAY BRO",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "LETS GOOO BABY",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "HOLY MOLY",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "what a play man",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "sheeeesh",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "no wayyyy dude",
+          "gold": "hype",
+          "pred": "none"
+        },
+        {
+          "text": "absolute cinema",
+          "gold": "hype",
+          "pred": "none"
+        }
+      ]
+    }
+  },
   "ladder": [
     {
-      "name": "Raw message count",
-      "decisionAccuracy": 0.381,
-      "falseVoicesPerRun": 0.22,
-      "spamResistance": 0
+      "id": "raw-count",
+      "name": "1. Raw message count",
+      "decisionAccuracy": 0.38076923076923075,
+      "falseVoicesPerRun": 0.21818181818181817,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 11500,
+      "missedVoices": 133,
+      "spamResistance": 0,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 0.3,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7500
+        },
+        "flood_attack": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "negation_heavy": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "divided": {
+          "accuracy": 0.6,
+          "falseVoicesPerRun": 0.4,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 0.35,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 14250
+        },
+        "meta_questions": {
+          "accuracy": 0.25,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 15500
+        },
+        "bot_swarm": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 0.55,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 12250
+        }
+      }
     },
     {
-      "name": "Keyword matching",
-      "decisionAccuracy": 0.442,
-      "falseVoicesPerRun": 0.89,
-      "spamResistance": 0.075
+      "id": "keyword",
+      "name": "2. Keyword matching",
+      "decisionAccuracy": 0.4423076923076923,
+      "falseVoicesPerRun": 0.8863636363636364,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 1000,
+      "missedVoices": 85,
+      "spamResistance": 0.075,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 0.65,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": 0
+        },
+        "flood_attack": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "negation_heavy": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1.05,
+          "medianLatencyMs": null
+        },
+        "divided": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 1.5,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 0.15,
+          "falseVoicesPerRun": 0.85,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 16750
+        },
+        "big_room_minority": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0.95,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 0.925,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1500
+        },
+        "meta_questions": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 2.75,
+          "medianLatencyMs": null
+        },
+        "bot_swarm": {
+          "accuracy": 0.15,
+          "falseVoicesPerRun": 1.2,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0.35,
+          "medianLatencyMs": 1500
+        }
+      }
     },
     {
-      "name": "Semantic meaning (+stance), per message",
-      "decisionAccuracy": 0.731,
-      "falseVoicesPerRun": 0.42,
-      "spamResistance": 0.5
+      "id": "semantic",
+      "name": "3. Semantic meaning (+stance), per message",
+      "decisionAccuracy": 0.7307692307692307,
+      "falseVoicesPerRun": 0.41818181818181815,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 0,
+      "missedVoices": 18,
+      "spamResistance": 0.5,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "flood_attack": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1.65,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.95,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.5,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 19000
+        },
+        "big_room_minority": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 4000
+        },
+        "meta_questions": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        }
+      }
     },
     {
-      "name": "Semantic + one viewer, one voice",
+      "id": "semantic-viewers",
+      "name": "4. Semantic + one viewer, one voice",
       "decisionAccuracy": 0.75,
-      "falseVoicesPerRun": 0.28,
-      "spamResistance": 0.875
+      "falseVoicesPerRun": 0.2818181818181818,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 0,
+      "missedVoices": 20,
+      "spamResistance": 0.875,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.85,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "big_room_minority": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "bot_swarm": {
+          "accuracy": 0.75,
+          "falseVoicesPerRun": 0.25,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        }
+      }
     },
     {
-      "name": "Full CrowdSense",
-      "decisionAccuracy": 0.992,
-      "falseVoicesPerRun": 0.01,
-      "spamResistance": 1
+      "id": "crowdsense",
+      "name": "5. Full CrowdSense",
+      "decisionAccuracy": 0.9923076923076923,
+      "falseVoicesPerRun": 0.00909090909090909,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 1500,
+      "missedVoices": 1,
+      "spamResistance": 1,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1750
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 3250
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7750
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7000
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 750
+        }
+      }
     }
   ],
-  "stanceAccuracy": 0.933,
-  "meaningGroupingAccuracy": 0.863,
-  "resolutionPrecision": 0.952,
-  "resolutionRecall": 1,
-  "medianConfusionDrop": 0.75,
-  "note": "Simulated scenarios; real Twitch testing is a small functional check."
+  "ablations": [
+    {
+      "id": "full",
+      "name": "Full CrowdSense",
+      "decisionAccuracy": 0.9923076923076923,
+      "falseVoicesPerRun": 0.00909090909090909,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 1500,
+      "missedVoices": 1,
+      "spamResistance": 1,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1750
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 3250
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7750
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7000
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 750
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 1,
+        "medianConfusionDetectLatencyMs": 8849,
+        "resolutionPrecision": 0.9523809523809523,
+        "resolutionRecall": 1,
+        "falseResolutions": 1,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 75,
+        "requestDetectionRate": 1
+      }
+    },
+    {
+      "id": "no-semantic",
+      "name": "− semantic grouping",
+      "decisionAccuracy": 0.9961538461538462,
+      "falseVoicesPerRun": 0.004545454545454545,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 2000,
+      "missedVoices": 1,
+      "spamResistance": 1,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 2500
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 3500
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.05,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 9250
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7500
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1000
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 0.975,
+        "medianConfusionDetectLatencyMs": 13307,
+        "resolutionPrecision": 0.8636363636363636,
+        "resolutionRecall": 0.95,
+        "falseResolutions": 3,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 94.5,
+        "requestDetectionRate": 1
+      }
+    },
+    {
+      "id": "no-stance",
+      "name": "− stance / negation",
+      "decisionAccuracy": 0.7076923076923077,
+      "falseVoicesPerRun": 0.2590909090909091,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 3500,
+      "missedVoices": 55,
+      "spamResistance": 0.7,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 0.65,
+          "falseVoicesPerRun": 0.05,
+          "medianLatencyMs": 6250
+        },
+        "flood_attack": {
+          "accuracy": 0.4,
+          "falseVoicesPerRun": 0.25,
+          "medianLatencyMs": 9750
+        },
+        "negation_heavy": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "divided": {
+          "accuracy": 0.7,
+          "falseVoicesPerRun": 0.5,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.45,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": 8000
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0.95,
+          "medianLatencyMs": 4250
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 5500
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 1,
+        "medianConfusionDetectLatencyMs": 8849,
+        "resolutionPrecision": 0.9523809523809523,
+        "resolutionRecall": 1,
+        "falseResolutions": 1,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 75,
+        "requestDetectionRate": 1
+      }
+    },
+    {
+      "id": "no-dedup",
+      "name": "− one viewer, one voice",
+      "decisionAccuracy": 0.8653846153846154,
+      "falseVoicesPerRun": 0.09545454545454546,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 4000,
+      "missedVoices": 28,
+      "spamResistance": 0.5,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 4000
+        },
+        "flood_attack": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0.95,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 4500
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.6,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 11000
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 0.975,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 2500
+        },
+        "meta_questions": {
+          "accuracy": 0.7,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 9250
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1500
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 1,
+        "medianConfusionDetectLatencyMs": 9071,
+        "resolutionPrecision": 0.8,
+        "resolutionRecall": 1,
+        "falseResolutions": 5,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 78,
+        "requestDetectionRate": 1
+      }
+    },
+    {
+      "id": "no-temporal",
+      "name": "− temporal stability",
+      "decisionAccuracy": 0.9192307692307692,
+      "falseVoicesPerRun": 0.045454545454545456,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 0,
+      "missedVoices": 1,
+      "spamResistance": 1,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.5,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 2000
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 0.975,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 750
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 0.5,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 1,
+        "medianConfusionDetectLatencyMs": 4042,
+        "resolutionPrecision": 0.9523809523809523,
+        "resolutionRecall": 1,
+        "falseResolutions": 1,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 75,
+        "requestDetectionRate": 1
+      }
+    },
+    {
+      "id": "no-adaptive",
+      "name": "− adaptive thresholds",
+      "decisionAccuracy": 0.7961538461538461,
+      "falseVoicesPerRun": 0.16818181818181818,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 1000,
+      "missedVoices": 20,
+      "spamResistance": 1,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 750
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1250
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 0.35,
+          "falseVoicesPerRun": 0.75,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "big_room_minority": {
+          "accuracy": 0,
+          "falseVoicesPerRun": 1,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 3500
+        },
+        "bot_swarm": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 2750
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 1,
+        "medianConfusionDetectLatencyMs": 8468,
+        "resolutionPrecision": 0.9523809523809523,
+        "resolutionRecall": 1,
+        "falseResolutions": 1,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 75,
+        "requestDetectionRate": 1
+      }
+    },
+    {
+      "id": "no-integrity",
+      "name": "− integrity weighting",
+      "decisionAccuracy": 0.9230769230769231,
+      "falseVoicesPerRun": 0.09090909090909091,
+      "runsWithFalseVoice": null,
+      "medianLatencyMs": 1500,
+      "missedVoices": 1,
+      "spamResistance": 0.55,
+      "perScenario": {
+        "organic_majority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 1750
+        },
+        "flood_attack": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "negation_heavy": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 3250
+        },
+        "divided": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0.1,
+          "medianLatencyMs": null
+        },
+        "transient_burst": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "small_room": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7750
+        },
+        "big_room_minority": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": null
+        },
+        "mind_change": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 0
+        },
+        "meta_questions": {
+          "accuracy": 0.95,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 7000
+        },
+        "bot_swarm": {
+          "accuracy": 0.1,
+          "falseVoicesPerRun": 0.9,
+          "medianLatencyMs": null
+        },
+        "stale_signal": {
+          "accuracy": 1,
+          "falseVoicesPerRun": 0,
+          "medianLatencyMs": 750
+        }
+      },
+      "signals": {
+        "confusionDetectionRate": 1,
+        "medianConfusionDetectLatencyMs": 8849,
+        "resolutionPrecision": 0.9523809523809523,
+        "resolutionRecall": 1,
+        "falseResolutions": 1,
+        "resolutionRuns": {
+          "truly_resolved": 20,
+          "still_confused": 20
+        },
+        "medianReportedDropPct": 75,
+        "requestDetectionRate": 1
+      }
+    }
+  ],
+  "runtimeMs": 3004
 }

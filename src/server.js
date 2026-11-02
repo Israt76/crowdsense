@@ -15,8 +15,8 @@
 // API requires it.
 
 import http from 'node:http';
-import { readFileSync, existsSync } from 'node:fs';
-import { join, dirname, extname, normalize as normPath } from 'node:path';
+import { readFileSync, existsSync, statSync } from 'node:fs';
+import { join, dirname, extname, sep, normalize as normPath } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CrowdSense } from './engine/engine.js';
 import { buildDemo } from './sim/demo-script.js';
@@ -159,7 +159,12 @@ function json(res, code, obj) {
 }
 
 const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, 'http://x');
+  let url;
+  try {
+    url = new URL(req.url.startsWith('/') ? 'http://x' + req.url : req.url);
+  } catch {
+    return json(res, 400, { error: 'invalid request URL' });
+  }
   const p = url.pathname;
 
   if (p === '/events') {
@@ -199,7 +204,7 @@ const server = http.createServer(async (req, res) => {
 
   const file = PAGES[p] || p.slice(1);
   const fp = normPath(join(root, 'public', file));
-  if (!fp.startsWith(join(root, 'public')) || !existsSync(fp)) {
+  if (!fp.startsWith(join(root, 'public') + sep) || !existsSync(fp) || !statSync(fp).isFile()) {
     res.writeHead(404);
     return res.end('not found');
   }

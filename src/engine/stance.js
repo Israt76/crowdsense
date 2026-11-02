@@ -53,7 +53,7 @@ export function parseHint(hint) {
     topic = body.slice(0, colon).trim();
     body = body.slice(colon + 1);
   }
-  const segs = body.split(/s*(?:/|||vs.?|or)s*/i).map((s) => s.trim()).filter(Boolean);
+  const segs = body.split(/\s*(?:\/|\||\bvs\.?\b|\bor\b)\s*/i).map((s) => s.trim()).filter(Boolean);
   if (segs.length < 2) return null;
   const segWords = segs.map((s) => normalize(s).words);
   const counts = new Map();

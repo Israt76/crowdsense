@@ -64,11 +64,12 @@ export class TwitchChat extends EventEmitter {
   }
 
   connect() {
+    if (this.closed) return;
     if (!this.WS) throw new Error('No WebSocket implementation available (Node >= 22 required)');
     const ws = new this.WS(this.url);
     this.ws = ws;
     ws.addEventListener('open', () => {
-      ws.send('CAP REQ :twitch.tv/tags twitch.tv/commands');
+      ws.send('CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership');
       if (this.username && this.token) {
         const tok = this.token.startsWith('oauth:') ? this.token : `oauth:${this.token}`;
         ws.send(`PASS ${tok}`);
@@ -96,7 +97,7 @@ export class TwitchChat extends EventEmitter {
     ws.addEventListener('close', () => {
       this.emit('status', { connected: false });
       if (this.closed) return;
-      setTimeout(() => this.connect(), this.backoff);
+      this.reconnectTimer = setTimeout(() => this.connect(), this.backoff);
       this.backoff = Math.min(this.backoff * 2, 30_000);
     });
     ws.addEventListener('error', (e) => this.emit('status', { error: String(e?.message || 'websocket error') }));
@@ -104,6 +105,7 @@ export class TwitchChat extends EventEmitter {
 
   close() {
     this.closed = true;
+    clearTimeout(this.reconnectTimer);
     this.ws?.close();
   }
 }

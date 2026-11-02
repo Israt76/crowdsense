@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CrowdSense</title><link rel="stylesheet" href="/overlay.css"><link rel="stylesheet" href="/panel.css"><style>
+:root{--bg:#120b2e;--col:#1a1240;--line:#2c2361;--text:#ece9f8;--dim:#8e87b5}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 "Segoe UI",system-ui,sans-serif;min-height:100vh}header{display:flex;align-items:center;gap:14px;padding:14px 22px}h1{margin:0;font-size:22px}.tag{color:var(--dim)}.badge{margin-left:auto;font-weight:800;font-size:12px;padding:4px 10px;border-radius:99px;background:#ffb44c;color:#2a1800}.badge.live{background:#9dff8a;color:#14301a}.layout{display:grid;grid-template-columns:270px minmax(0,1fr) 340px;gap:16px;padding:0 22px 22px}.col{background:var(--col);border-radius:14px;padding:14px}.col h2{margin:0 0 10px;font-size:13px;color:var(--dim)}#chat{list-style:none;margin:0;padding:0;height:540px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:3px}#chat li b{color:#9a91cc;margin-right:6px}.stagewrap{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(#14424d,#0b1f27)}#stage{position:absolute;inset:0}.caption{margin-top:12px;min-height:2.8em;font-size:17px;font-weight:650}.controls{display:flex;gap:8px;margin-top:12px}.controls button{border:0;border-radius:9px;padding:8px 11px;background:#2b2259;color:white;font-weight:700}@media(max-width:1100px){.layout{grid-template-columns:1fr}#chat{height:220px}}
+</style></head><body>
+<header><h1>CrowdSense</h1><span class="tag">When chat speaks together, streamers hear it.</span><span class="badge" id="badge">Connecting…</span></header>
+<div class="layout"><section class="col" id="chatcol"><h2 id="chathead">Chat</h2><ul id="chat"></ul></section><section><div class="stagewrap"><div id="stage"></div></div><div class="caption" id="caption"></div></section><aside class="col"><h2>Streamer panel</h2><div class="panel" id="panel"></div><div class="controls" id="democtl" hidden><button id="restart">Restart demo</button><button id="proofbtn">Show results</button></div></aside></div>
+<script type="module">
+import{Overlay}from'/overlay.js';import{mountPanel}from'/panel.js';
+const $=id=>document.getElementById(id);const overlay=new Overlay($('stage'));const panel=mountPanel($('panel'));const chat=$('chat');let mode='demo';
+function addChat(m){const li=document.createElement('li');const b=document.createElement('b');b.textContent=m.who;li.append(b,document.createTextNode(m.text));chat.appendChild(li);while(chat.children.length>40)chat.firstChild.remove();}
+const es=new EventSource('/events');
+es.addEventListener('hello',e=>{mode=JSON.parse(e.data).mode;$('democtl').hidden=mode!=='demo';$('chatcol').hidden=false;$('chathead').textContent=mode==='live'?'Chat (live from Twitch)':'Chat';});
+es.addEventListener('chat',e=>addChat(JSON.parse(e.data)));
+es.addEventListener('caption',e=>{$('caption').textContent=JSON.parse(e.data).text||'';});
+es.addEventListener('reset',()=>{chat.innerHTML='';$('caption').textContent='';});
+es.addEventListener('state',e=>{const s=JSON.parse(e.data);overlay.update(s);panel.update(s);$('badge').textContent=s.status.source||'CrowdSense';$('badge').className='badge'+(s.status.connected?' live':'');});
+$('restart').onclick=()=>fetch('/api/demo/restart',{method:'POST',headers:{'content-type':'application/json'},body:'{}'});
+$('proofbtn').onclick=async()=>{const r=await(await fetch('/api/results')).json();alert(JSON.stringify(r,null,2));};
+</script></body></html>

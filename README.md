@@ -123,8 +123,7 @@ The final audit reproduced the **99.2% simulated decision accuracy** and complet
 - `src/sim/` — seeded demo/replay/evaluation scenarios
 - `public/` — overlay, control view, streamer panel, lab
 - `test/` — automated tests
-- `results/` — benchmark report and machine-readable metrics
-- `results/` — generated evaluation and test summaries
+- `results/` — benchmark report, machine-readable metrics, and generated evaluation/test summaries
 - `scripts/` — live check, test runner and capture helpers
 - `docs/DEMO.md` — demo walkthrough
 

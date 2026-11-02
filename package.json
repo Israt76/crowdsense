@@ -1,0 +1,21 @@
+{
+  "name": "crowdsense",
+  "version": "1.0.0",
+  "description": "CrowdSense — When Chat Speaks Together, Streamers Hear It. Turns natural live chat into one collective Crowd Voice.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "demo": "node src/server.js --mode=demo",
+    "start": "node src/server.js --mode=live",
+    "lab": "node src/server.js --mode=lab",
+    "replay": "node src/server.js --mode=replay",
+    "replay:cli": "node src/sim/replay-cli.js",
+    "test": "node scripts/run-tests.js",
+    "eval": "node eval/run-eval.js",
+    "eval:quick": "SEEDS=5 node eval/run-eval.js",
+    "live:check": "node scripts/live-check.js",
+    "check": "node scripts/run-tests.js && node eval/run-eval.js",
+    "capture": "node scripts/capture-scenes.js"
+  }
+}

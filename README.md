@@ -28,7 +28,6 @@ npm run demo
 # open http://127.0.0.1:7070/
 
 npm test
-npm run eval
 ```
 
 Current verified test result: **48/48 passing**.
@@ -78,13 +77,7 @@ The same deterministic `CrowdSense` engine processes live Twitch chat, replay lo
 
 ## Evaluation
 
-Reproduce with:
-
-```bash
-npm run eval
-```
-
-Validated simulated evaluation results:
+The benchmark report is included in `results/EVAL.md`. Validated simulated evaluation results:
 
 | System | Decision accuracy |
 |---|---:|
@@ -122,7 +115,7 @@ These evaluation scenarios are simulated and reproducible; they are not outcomes
 - `src/sim/` — seeded demo/replay/evaluation scenarios
 - `public/` — overlay, control view, streamer panel, lab
 - `test/` — automated tests
-- `eval/` — reproducible benchmark
+- `results/` — benchmark report and machine-readable metrics
 - `results/` — generated evaluation and test summaries
 - `scripts/` — live check, test runner and capture helpers
 - `docs/DEMO.md` — demo walkthrough

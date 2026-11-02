@@ -1,0 +1,43 @@
+{
+  "evaluation_type": "simulated benchmark",
+  "seeds": 20,
+  "scenarios": 11,
+  "ladder": [
+    {
+      "name": "Raw message count",
+      "decisionAccuracy": 0.381,
+      "falseVoicesPerRun": 0.22,
+      "spamResistance": 0
+    },
+    {
+      "name": "Keyword matching",
+      "decisionAccuracy": 0.442,
+      "falseVoicesPerRun": 0.89,
+      "spamResistance": 0.075
+    },
+    {
+      "name": "Semantic meaning (+stance), per message",
+      "decisionAccuracy": 0.731,
+      "falseVoicesPerRun": 0.42,
+      "spamResistance": 0.5
+    },
+    {
+      "name": "Semantic + one viewer, one voice",
+      "decisionAccuracy": 0.75,
+      "falseVoicesPerRun": 0.28,
+      "spamResistance": 0.875
+    },
+    {
+      "name": "Full CrowdSense",
+      "decisionAccuracy": 0.992,
+      "falseVoicesPerRun": 0.01,
+      "spamResistance": 1
+    }
+  ],
+  "stanceAccuracy": 0.933,
+  "meaningGroupingAccuracy": 0.863,
+  "resolutionPrecision": 0.952,
+  "resolutionRecall": 1,
+  "medianConfusionDrop": 0.75,
+  "note": "Simulated scenarios; real Twitch testing is a small functional check."
+}
